@@ -77,6 +77,8 @@ class _DreamhostLexiconClient(dns_common_lexicon.LexiconClient):
 
         self.provider = dreamhost.Provider(config)
 
+        logging.warning('_DreamhostLexiconClient: after set Provider: %s', self.provider)
+
     def _handle_general_error(self, e, domain_name):
         if not str(e).startswith('Domain not found'):
             return errors.PluginError('Unexpected error determining zone identifier for {0}: {1}'
