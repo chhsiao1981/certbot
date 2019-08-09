@@ -56,6 +56,7 @@ class Authenticator(dns_common.DNSAuthenticator):
     def _get_dreamhost_client(self):
         logging.warning('_get_dreamhost_client: credentials: %s', self.credentials)
         api_key = self.credentials.conf('key')
+        logging.warning('_get_dreamhost_client: api_key: %s', api_key)
 
         return _DreamhostLexiconClient(api_key)
 
