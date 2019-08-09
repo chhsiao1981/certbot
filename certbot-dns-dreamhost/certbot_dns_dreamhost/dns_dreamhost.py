@@ -73,6 +73,8 @@ class _DreamhostLexiconClient(dns_common_lexicon.LexiconClient):
             'auth_token': api_key,
         })
 
+        logging.warning('_DreamhostLexiconClient: config: %s', config)
+
         self.provider = dreamhost.Provider(config)
 
     def _handle_general_error(self, e, domain_name):
